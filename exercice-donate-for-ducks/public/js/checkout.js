@@ -3,7 +3,7 @@
 /* global fetch */
 /* global URLSearchParams */
 
-const stripe;
+const stripe = Stripe("pk_test_51PZ7VORxrDCKsSybK81LEOF15qAEON3hYILFXcJObw91jOHJ4ChWmaFhDOAESYF3KuFsAYjb6qO5q5A307Z8TrBc00EAHt7Z4I");
 
 let amount;
 initialize();
@@ -45,7 +45,7 @@ async function handleSubmit(e) {
   const { error } = await stripe.confirmPayment({
     elements,
     confirmParams: {
-      return_url: "",
+      return_url: "http://donate-for-ducks/public/",
     },
   });
 
@@ -118,3 +118,13 @@ function setLoading(isLoading) {
     document.querySelector("#button-text").classList.remove("hidden");
   }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+  const input = document.querySelector('#montant-personnalise');
+  input.addEventListener('input', function(){
+    amount=input.value;
+    if(amount >= 1){
+      initialize();
+    }
+  })
+})

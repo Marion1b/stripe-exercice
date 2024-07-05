@@ -1,5 +1,7 @@
 <?php
 
+$stripe = $_ENV["API_KEY"];
+
 function calculateOrderAmount(int $amount): int {
     // Replace this constant with a calculation of the order's amount
     // Calculate the order total on the server to prevent

@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../public/css/checkout.css" />
     <script src="../public/js/checkout.js" defer></script>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
     <!-- Display a payment form -->
-    <form id="payment-form">
+    <form id="payment-form" method="post">
       <h1>Appel aux dons pour les canards de debug</h1>
       <fieldset>
         <legend><label for="montant-personnalise">Choisissez votre montant :</label></legend>
