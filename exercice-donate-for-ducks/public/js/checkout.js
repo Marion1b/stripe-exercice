@@ -45,7 +45,7 @@ async function handleSubmit(e) {
   const { error } = await stripe.confirmPayment({
     elements,
     confirmParams: {
-      return_url: "http://donate-for-ducks/public/",
+      return_url: "http://donate-for-ducks/public/index.php",
     },
   });
 
